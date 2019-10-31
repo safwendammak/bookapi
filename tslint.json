@@ -18,8 +18,9 @@
     "component-selector": [
       true,
       "element",
-      "app",
-      "kebab-case"
+      "app", // Je veux pas la supprimer :D
+      "kebab-case",
+      "adz"
     ],
     "import-blacklist": [
       true,

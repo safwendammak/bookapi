@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>{{ 'RESULT.TITLE' | translate }}</h1>
+<mat-dialog-content>
+  <ul>
+    <li>
+      <img
+        alt="thumbnail"
+        height="150px"
+        src="{{data.book.volumeInfo.imageLinks.thumbnail}}"
+        width="150px">
+    </li>
+    <li>
+      <b>ID:</b>
+      {{data.book.id}}
+    </li>
+    <li>
+      <b>{{'SEARCH.AUTHOR' | translate}}: </b>
+      <span *ngFor="let author of data.book.volumeInfo.authors">{{author }}  , </span>
+    </li>
+    <li>
+      <b>Description:</b>
+      {{data.book.volumeInfo.description}}
+    </li>
+    <li>
+      <b>{{'RESULT.CATEGORIES' | translate}}: </b>
+      <span *ngFor="let cat of data.book.volumeInfo.categories">{{cat}} , </span>
+    </li>
+    <li>
+      <b>{{'RESULT.LANGUAGE' | translate}}:</b>
+      {{data.book.volumeInfo.language}}
+    </li>
+    <li>
+      <b>{{'RESULT.PAGE' | translate}}: </b>
+      {{data.book.volumeInfo.pageCount}}
+    </li>
+    <li>
+      <b>{{'RESULT.PUBLISHED' | translate}}: </b>
+      {{data.book.volumeInfo.publishedDate}}
+    </li>
+    <li>
+      <b>{{'RESULT.VIEW' | translate}}: </b>
+      <a href="{{data.book.volumeInfo.infoLink}}">Clique ici !</a>
+    </li>
+  </ul>
+  <mat-dialog-actions>
+    <button (click)="close()" class="mat-raised-button">{{'RESULT.CLOSE' | translate}}</button>
+  </mat-dialog-actions>
+</mat-dialog-content>

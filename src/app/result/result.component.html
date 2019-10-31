@@ -1,0 +1,49 @@
+<div *ngIf="error" style="color:red;">
+  <span>{{'SEARCH.ERROR' |translate}}</span>
+</div>
+<div style="float:right">
+  <img (click)="translate.use('fr')" alt="fr_flag" height="40px"
+       src="../../assets/img/fr_flag.jpg" width="40px">
+  <img (click)="translate.use('en')"
+       alt="uk_flag"
+       height="40px"
+       src="../../assets/img/uk_flag.png"
+       width="40px">
+</div>
+<!--We have one entry point to the result route so we can just back to / -->
+<button color="primary" mat-button mat-flat-button routerLink="/">{{'SEARCH.BACK' |translate}}</button>
+<form class="example-form">
+  <mat-form-field *ngIf="!error" class="example-full-width">
+    <input #searchfilter [(ngModel)]="search" matInput name="search"
+           placeholder="{{'SEARCH.AUTHOR' |translate}}/{{'SEARCH.CATEGORY' |translate}}">
+  </mat-form-field>
+</form>
+<mat-form-field>
+  <mat-label>{{'SEARCH.OPTION' |translate}}</mat-label>
+  <mat-select (selectionChange)="getBooksFiltered()" *ngIf="!error" [(value)]="filterkey">
+    <mat-option value="partial">partial</mat-option>
+    <mat-option value="full">full</mat-option>
+    <mat-option value="free-ebooks">free-ebooks</mat-option>
+    <mat-option value="paid-ebooks">paid-ebooks</mat-option>
+    <mat-option value="ebooks">ebooks</mat-option>
+  </mat-select>
+</mat-form-field>
+<div *ngIf="books" class="card">
+  <div *ngFor="let b of books | filter : search ; let i = index ; ">
+    <div class="carditem">
+      <p *ngIf="b.volumeInfo.imageLinks">
+        <img
+          alt="thumbnail"
+          height="170px"
+          src={{b.volumeInfo.imageLinks.smallThumbnail}}
+          width="128px"/>
+      </p>
+      <!--        We should provide description even when textSnippet is undefined-->
+      <p *ngIf="b.searchInfo && b.searchInfo.textSnippet">{{b.searchInfo.textSnippet}}</p>
+      <button (click)="GetbookByID(b.id)" color="warn" mat-button
+              mat-flat-button>{{ 'SEARCH.DETAIL' | translate }}
+
+      </button>
+    </div>
+  </div>
+</div>

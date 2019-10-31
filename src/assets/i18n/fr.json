@@ -1,0 +1,22 @@
+{
+  "SEARCH": {
+    "SELECT": "Changer la langue",
+    "DETAIL": "Plus d'informations",
+    "ERROR": "Merci de retourner et saisir un mot clé",
+    "BACK" : "Retour",
+    "AUTHOR": "Auteur",
+    "CATEGORY": "Catégorie",
+    "OPTION": "Sélectionner une option"
+
+  },
+  "RESULT": {
+    "TITLE": "Informations du livre",
+    "CATEGORIES": "catégories",
+    "LANGUAGE": "Langage",
+    "CLOSE": "Fermer",
+    "PAGE": "Nombre de pages",
+    "PUBLISHED": "Date de publication",
+    "VIEW": "Lien du livre"
+
+  }
+}

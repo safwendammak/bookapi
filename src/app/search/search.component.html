@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<body>
+<div class="bg">
+
+  <form (submit)="search()">
+
+    <div class="searchBox">
+      <input [(ngModel)]="searchkeyword" class="searchInput" name="searchvalue" placeholder="Search" type="text">
+      <button class="searchButton" type="submit">
+        <i class="material-icons">
+          search
+        </i>
+      </button>
+    </div>
+  </form>
+</div>
+</body>

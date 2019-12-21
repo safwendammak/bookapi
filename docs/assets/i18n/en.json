@@ -1,0 +1,26 @@
+{
+  "SEARCH": {
+    "DETAIL": "More Info",
+    "SELECT": "Change language",
+    "ERROR": "Please go back and enter a search keyword",
+    "BACK": "Back",
+    "AUTHOR": "Author",
+    "CATEGORY": "Category",
+    "OPTION": "Select an option"
+
+
+
+  },
+  "RESULT": {
+    "TITLE": "Book Informations",
+    "CATEGORIES": "categories",
+    "LANGUAGE": "Laguage",
+    "CLOSE": "Close",
+    "PAGE": "Number of pages",
+    "PUBLISHED": "Published Date",
+    "VIEW": "Book Link"
+
+
+
+  }
+}
